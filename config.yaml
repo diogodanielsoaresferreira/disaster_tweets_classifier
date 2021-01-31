@@ -1,0 +1,12 @@
+spacy_model: en_core_web_sm
+raw_dataset_path: datasets/raw.csv
+processed_dataset_path: datasets/processed.csv
+train_X_dataset_path: datasets/train_X.csv
+train_y_dataset_path: datasets/train_y.csv
+validation_X_dataset_path: datasets/validation_X.csv
+validation_y_dataset_path: datasets/validation_y.csv
+model_path: artifacts/model.joblib
+train_predictions_path: datasets/train_predictions.csv
+validation_predictions_path: datasets/validation_predictions.csv
+experiment_name: TF-IDF with Linear SVC
+run_name: Default values
