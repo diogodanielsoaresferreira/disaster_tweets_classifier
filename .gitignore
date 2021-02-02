@@ -153,5 +153,8 @@ dmypy.json
 # profiling data
 .prof
 
+#Mlflow data
+mlruns/*
+
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 

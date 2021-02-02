@@ -1,0 +1,66 @@
+stages:
+  cleaning:
+    cmd: jupyter nbconvert --execute --clear-output data_cleaning.ipynb
+    deps:
+    - data_cleaning.ipynb
+    - datasets/raw.csv
+    params:
+    - processed_dataset_path
+    - raw_dataset_path
+    outs:
+    - datasets/processed.csv
+  train_validation_split:
+    cmd: jupyter nbconvert --execute --clear-output train_validation_split.ipynb
+    deps:
+    - datasets/processed.csv
+    - train_validation_split.ipynb
+    params:
+    - processed_dataset_path
+    - train_X_dataset_path
+    - train_y_dataset_path
+    - validation_X_dataset_path
+    - validation_y_dataset_path
+    outs:
+    - datasets/train_X.csv
+    - datasets/train_y.csv
+    - datasets/validation_X.csv
+    - datasets/validation_y.csv
+  train_model:
+    cmd: jupyter nbconvert --execute --clear-output train_model.ipynb
+    deps:
+    - datasets/train_X.csv
+    - datasets/train_y.csv
+    - train_model.ipynb
+    params:
+    - model_path
+    - train_X_dataset_path
+    - train_predictions_path
+    - train_y_dataset_path
+    outs:
+    - artifacts/model.joblib
+    - datasets/train_predictions.csv
+  predict:
+    cmd: jupyter nbconvert --execute --clear-output predict_validation.ipynb
+    deps:
+    - artifacts/model.joblib
+    - datasets/validation_X.csv
+    - predict_validation.ipynb
+    params:
+    - model_path
+    - validation_X_dataset_path
+    - validation_predictions_path
+    outs:
+    - datasets/validation_predictions.csv
+  evaluate:
+    cmd: jupyter nbconvert --execute --clear-output evaluate.ipynb
+    deps:
+    - datasets/train_predictions.csv
+    - datasets/train_y.csv
+    - datasets/validation_predictions.csv
+    - datasets/validation_y.csv
+    - evaluate.ipynb
+    params:
+    - train_predictions_path
+    - train_y_dataset_path
+    - validation_predictions_path
+    - validation_y_dataset_path
