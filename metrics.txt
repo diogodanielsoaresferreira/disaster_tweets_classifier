@@ -1,0 +1,1 @@
+{"train accuracy": 0.981359649122807, "train recall": 0.9648173207036536, "train precision": 0.9889042995839112, "train f1_score": 0.9767123287671233, "validation accuracy": 0.7691745799853908, "validation recall": 0.6655052264808362, "validation precision": 0.7549407114624506, "validation f1_score": 0.7074074074074074}

@@ -18,6 +18,6 @@ jobs:
           pip install -r requirements.txt
           dvc repro
 
-          cat metrics.csv >> report.md
-          cml-send-comment report.md
+          cat metrics.txt >> report.md
           great_expectations checkpoint run validate.chk
+          cml-send-comment report.md

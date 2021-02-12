@@ -66,5 +66,5 @@ stages:
     - validation_predictions_path
     - validation_y_dataset_path
     metrics:
-    - metrics.csv:
+    - metrics.txt:
         cache: false
