@@ -2,3 +2,4 @@ jupyterlab==3.0.6
 nbconvert==5.6.1
 pandas==0.25.3
 scikit-learn==0.24.1
+yaml==5.3.1
