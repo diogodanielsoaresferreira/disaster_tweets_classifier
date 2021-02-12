@@ -106,11 +106,16 @@ evaluate:
     md5: 3d2e82e7be876d0ac0b3c4f5c1cf5376
     size: 2745
   - path: evaluate.ipynb
-    md5: 8f9990ab1952941805613520608480a2
-    size: 2555
+    md5: 71d6f9c6f383fea27938dda85c477b94
+    size: 3473
   params:
     params.yaml:
+      metrics_path: metrics.csv
       train_predictions_path: datasets/train_predictions.csv
       train_y_dataset_path: datasets/train_y.csv
       validation_predictions_path: datasets/validation_predictions.csv
       validation_y_dataset_path: datasets/validation_y.csv
+  outs:
+  - path: metrics.csv
+    md5: 84d40f3fc120398607f91169eb69a238
+    size: 289

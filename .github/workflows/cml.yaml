@@ -17,4 +17,6 @@ jobs:
           
           pip install -r requirements.txt
           dvc repro
+
+          cat metrics.csv >> report.md
           great_expectations checkpoint run validate.chk

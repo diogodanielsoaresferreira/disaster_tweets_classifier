@@ -8,5 +8,6 @@ validation_y_dataset_path: datasets/validation_y.csv
 model_path: artifacts/model.joblib
 train_predictions_path: datasets/train_predictions.csv
 validation_predictions_path: datasets/validation_predictions.csv
+metrics_path: metrics.csv
 experiment_name: TF-IDF with Linear SVC
 run_name: Default values

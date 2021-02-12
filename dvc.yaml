@@ -60,7 +60,11 @@ stages:
     - datasets/validation_y.csv
     - evaluate.ipynb
     params:
+    - metrics_path
     - train_predictions_path
     - train_y_dataset_path
     - validation_predictions_path
     - validation_y_dataset_path
+    metrics:
+    - metrics.csv:
+        cache: false
