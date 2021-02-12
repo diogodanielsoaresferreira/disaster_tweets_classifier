@@ -19,5 +19,5 @@ jobs:
           dvc repro
 
           cat metrics.csv >> report.md
-          cml-send-github-check report.md
+          cml-send-comment report.md
           great_expectations checkpoint run validate.chk
