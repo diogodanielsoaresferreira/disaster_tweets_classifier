@@ -2,8 +2,8 @@ cleaning:
   cmd: jupyter nbconvert --execute --clear-output data_cleaning.ipynb
   deps:
   - path: data_cleaning.ipynb
-    md5: 5c982d055d0f6af599eba6cb5c047f74
-    size: 2904
+    md5: 8f147c7461e28fcba703d55b4b4dbf4a
+    size: 2903
   - path: datasets/raw.csv
     md5: f147942c91d00d754503775341d13682
     size: 987712
@@ -13,14 +13,14 @@ cleaning:
       raw_dataset_path: datasets/raw.csv
   outs:
   - path: datasets/processed.csv
-    md5: fecc42ddd17f7456d0b55a83a3cc6b7b
-    size: 1577571
+    md5: 951dbae06328767a35acc8976733ea7e
+    size: 1416078
 train_validation_split:
   cmd: jupyter nbconvert --execute --clear-output train_validation_split.ipynb
   deps:
   - path: datasets/processed.csv
-    md5: fecc42ddd17f7456d0b55a83a3cc6b7b
-    size: 1577571
+    md5: 951dbae06328767a35acc8976733ea7e
+    size: 1416078
   - path: train_validation_split.ipynb
     md5: 961ebf593cc68b1f3eefd7e042d58d5f
     size: 2009
@@ -33,26 +33,26 @@ train_validation_split:
       validation_y_dataset_path: datasets/validation_y.csv
   outs:
   - path: datasets/train_X.csv
-    md5: 3d117245bb4a948a19cd576d30b5f272
-    size: 1250885
+    md5: 151fb16a2b5500347fe4daaaa4b966be
+    size: 1123080
   - path: datasets/train_y.csv
-    md5: 614bac43ec36ce08401b25fc1f2bb7d9
-    size: 12187
+    md5: 725087bea73d10d60d0a4329815860a8
+    size: 10951
   - path: datasets/validation_X.csv
-    md5: 5a4527c7d46387cfa71df89952c54e84
-    size: 311545
+    md5: ef6288bab91d98e7b51518f133bd1f80
+    size: 279401
   - path: datasets/validation_y.csv
-    md5: 4b9bb8ae8d3f4a8316c81f0d499a5c97
-    size: 3053
+    md5: 3d2e82e7be876d0ac0b3c4f5c1cf5376
+    size: 2745
 train_model:
   cmd: jupyter nbconvert --execute --clear-output train_model.ipynb
   deps:
   - path: datasets/train_X.csv
-    md5: 3d117245bb4a948a19cd576d30b5f272
-    size: 1250885
+    md5: 151fb16a2b5500347fe4daaaa4b966be
+    size: 1123080
   - path: datasets/train_y.csv
-    md5: 614bac43ec36ce08401b25fc1f2bb7d9
-    size: 12187
+    md5: 725087bea73d10d60d0a4329815860a8
+    size: 10951
   - path: train_model.ipynb
     md5: 06b21deac557a34c8c9bd738cb7321a8
     size: 2183
@@ -64,20 +64,20 @@ train_model:
       train_y_dataset_path: datasets/train_y.csv
   outs:
   - path: artifacts/model.joblib
-    md5: 52f23724d2b5a24b1a25587c592f3b57
-    size: 626637
+    md5: 95f480773be85557b539cec65a5f72a3
+    size: 626124
   - path: datasets/train_predictions.csv
-    md5: 05f0695bbdb8341094b519f29da67060
-    size: 12182
+    md5: 8c22cc3bfe85ba92c788fafc718bb8dd
+    size: 10946
 predict:
   cmd: jupyter nbconvert --execute --clear-output predict_validation.ipynb
   deps:
   - path: artifacts/model.joblib
-    md5: 52f23724d2b5a24b1a25587c592f3b57
-    size: 626637
+    md5: 95f480773be85557b539cec65a5f72a3
+    size: 626124
   - path: datasets/validation_X.csv
-    md5: 5a4527c7d46387cfa71df89952c54e84
-    size: 311545
+    md5: ef6288bab91d98e7b51518f133bd1f80
+    size: 279401
   - path: predict_validation.ipynb
     md5: 06516123653f38e06d8e0404e1b9081e
     size: 1470
@@ -88,23 +88,23 @@ predict:
       validation_predictions_path: datasets/validation_predictions.csv
   outs:
   - path: datasets/validation_predictions.csv
-    md5: d103c61d85ba91a518ef0d8ba6a0a681
-    size: 3048
+    md5: e35fdaf36471eeea37b73c692f6386ea
+    size: 2740
 evaluate:
   cmd: jupyter nbconvert --execute --clear-output evaluate.ipynb
   deps:
   - path: datasets/train_predictions.csv
-    md5: 05f0695bbdb8341094b519f29da67060
-    size: 12182
+    md5: 8c22cc3bfe85ba92c788fafc718bb8dd
+    size: 10946
   - path: datasets/train_y.csv
-    md5: 614bac43ec36ce08401b25fc1f2bb7d9
-    size: 12187
+    md5: 725087bea73d10d60d0a4329815860a8
+    size: 10951
   - path: datasets/validation_predictions.csv
-    md5: d103c61d85ba91a518ef0d8ba6a0a681
-    size: 3048
+    md5: e35fdaf36471eeea37b73c692f6386ea
+    size: 2740
   - path: datasets/validation_y.csv
-    md5: 4b9bb8ae8d3f4a8316c81f0d499a5c97
-    size: 3053
+    md5: 3d2e82e7be876d0ac0b3c4f5c1cf5376
+    size: 2745
   - path: evaluate.ipynb
     md5: 8f9990ab1952941805613520608480a2
     size: 2555
