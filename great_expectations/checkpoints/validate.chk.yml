@@ -5,7 +5,7 @@ class_name: LegacyCheckpoint
 validation_operator_name: action_list_operator
 batches:
   - batch_kwargs:
-      path: /home/diogoferreira/Desktop/ml_pipeline/datasets/processed.csv
+      path: datasets/processed.csv
       datasource: processed_tweets
       data_asset_name: processed
     expectation_suite_names:
