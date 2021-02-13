@@ -1,0 +1,5 @@
+**TF-IDF with Linear SVC - Default values**
+
+| train accuracy | train recall | train precision | train f1_score | validation_accuracy | validation recall | validation_precision | validation f1_score |
+| ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| 0.98136 | 0.964817 | 0.988904 | 0.976712 | 0.769175 | 0.665505 | 0.754941 | 0.707407 |

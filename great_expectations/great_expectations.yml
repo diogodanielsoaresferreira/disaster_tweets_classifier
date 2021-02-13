@@ -22,7 +22,7 @@ datasources:
     batch_kwargs_generators:
       subdir_reader:
         class_name: SubdirReaderBatchKwargsGenerator
-        base_directory: /home/diogoferreira/Desktop/ml_pipeline/datasets
+        base_directory: datasets
     class_name: PandasDatasource
 
 # This config file supports variable substitution which enables: 1) keeping
