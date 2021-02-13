@@ -54,6 +54,7 @@ stages:
   evaluate:
     cmd: jupyter nbconvert --execute --clear-output evaluate.ipynb
     deps:
+    - artifacts/model.joblib
     - datasets/train_predictions.csv
     - datasets/train_y.csv
     - datasets/validation_predictions.csv
@@ -61,6 +62,7 @@ stages:
     - evaluate.ipynb
     params:
     - metrics_path
+    - model_path
     - train_predictions_path
     - train_y_dataset_path
     - validation_predictions_path

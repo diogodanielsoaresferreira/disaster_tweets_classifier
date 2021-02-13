@@ -93,6 +93,9 @@ predict:
 evaluate:
   cmd: jupyter nbconvert --execute --clear-output evaluate.ipynb
   deps:
+  - path: artifacts/model.joblib
+    md5: 95f480773be85557b539cec65a5f72a3
+    size: 626124
   - path: datasets/train_predictions.csv
     md5: 8c22cc3bfe85ba92c788fafc718bb8dd
     size: 10946
@@ -106,16 +109,17 @@ evaluate:
     md5: 3d2e82e7be876d0ac0b3c4f5c1cf5376
     size: 2745
   - path: evaluate.ipynb
-    md5: 9398e04747ecf935dfc907ad89dbc4d9
-    size: 3968
+    md5: f5769d5aeeba634bf1b33aec2315a6af
+    size: 4311
   params:
     params.yaml:
       metrics_path: metrics.txt
+      model_path: artifacts/model.joblib
       train_predictions_path: datasets/train_predictions.csv
       train_y_dataset_path: datasets/train_y.csv
       validation_predictions_path: datasets/validation_predictions.csv
       validation_y_dataset_path: datasets/validation_y.csv
   outs:
   - path: metrics.txt
-    md5: 4843891f68ac9a2988239bd562e5dced
+    md5: 8af85b33b524b8c22c5eed7dd6310015
     size: 356
